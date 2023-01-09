@@ -6,14 +6,22 @@ import { Injectable } from '@angular/core';
 })
 export class HttpService {
 
-  baseUrl:string = "http://localhost:3000/"
+  baseUrl:string="http://localhost:3000/";
 
-  httpheaders :HttpHeaders = new HttpHeaders()
-                            .set('content-type','application/json')
+  httpHeaders:HttpHeaders = new HttpHeaders()
+                            .set('content-type','application/json');
+
+
+
   constructor(private http:HttpClient) { }
 
-  getDetailsFromServer(endpoint:string,httpparams : HttpParams = new HttpParams()){
-    let url = this.baseUrl + endpoint
-return this.http.get(url,{'headers':this.httpheaders,'params':httpparams})
+  getDetailsFromServer(endPoint: string, httpParams: HttpParams = new HttpParams()) {
+    let url = this.baseUrl + endPoint;
+    return this.http.get(url, { 'headers': this.httpHeaders, 'params': httpParams });
+  }
+
+   postDetailsToServer(endPoint: string,requestBody:any) {
+    let url = this.baseUrl + endPoint;
+    return this.http.post(url, requestBody,{ 'headers': this.httpHeaders});
   }
 }

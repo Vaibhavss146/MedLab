@@ -10,22 +10,26 @@ import { HttpService } from 'src/app/core/http/http.service';
 export class MedicineHomeComponent implements OnInit {
   pincode!: string;
   isPinCodeAvailable: boolean = false;
-  PinCodeDetails : any;
+  pincodeDetails : any;
 
   @ViewChild ('closeBtn',{read:ElementRef}) closeBtn!:ElementRef
   constructor(private http: HttpService) { }
 
   ngOnInit(): void {
   }
-
   getPackageDetailsByPincode() {
     if (this.pincode && this.pincode.length == 6) {
       const httpParams: HttpParams = new HttpParams()
-        .set('pincode', this.pincode)
-      this.http.getDetailsFromServer('pinCodeDetails', httpParams).subscribe((responce: any) => {
-        if (responce && responce.length > 0) {
+        .set('pincode', this.pincode);
+
+      this.http.getDetailsFromServer('pincodeDetails', httpParams).subscribe((response: any) => {
+        alert ("get pincode function call");
+        if (response && response.length > 0) {
           this.isPinCodeAvailable = true;
-          this.PinCodeDetails = responce[0];
+          this.pincodeDetails = response[0];
+          if (this.closeBtn) {
+            this.closeBtn.nativeElement.click();
+          }
         } else {
           this.isPinCodeAvailable = false;
         }
@@ -35,4 +39,5 @@ export class MedicineHomeComponent implements OnInit {
         })
     }
   }
+
 }

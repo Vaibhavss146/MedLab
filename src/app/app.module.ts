@@ -10,10 +10,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { MedicineHomeComponent } from './components/medicine-home/medicine-home.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { TopDealsComponent } from './top-deals/top-deals.component';
+import { TopDealsComponent } from './components/top-deals/top-deals.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
-
+import {HttpClientModule} from '@angular/common/http';
+import { ViewProductDetailsComponent } from './components/view-product-details/view-product-details.component';
+import { ViewProductDetailsCategoryComponent } from './components/view-product-details-category/view-product-details-category.component';
  
 @NgModule({
   declarations: [
@@ -23,7 +24,10 @@ import {HttpClientModule} from '@angular/common/http'
     HomeComponent,
     PageNotFoundComponent,
     MedicineHomeComponent,
-    TopDealsComponent
+    TopDealsComponent,
+    ViewProductDetailsComponent, 
+    ViewProductDetailsCategoryComponent 
+    
  
   ],
 
@@ -33,7 +37,7 @@ import {HttpClientModule} from '@angular/common/http'
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
        
   ],
   providers: [],
