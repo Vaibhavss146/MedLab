@@ -23,4 +23,7 @@ export class ViewProductDetailsCategoryComponent implements OnInit {
      })
   }
 
+  addToCart(product:any){
+    this.cart.addSelectItemToCart(product);
+   }
 }

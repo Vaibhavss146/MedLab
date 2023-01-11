@@ -49,7 +49,9 @@ export class TopDealsComponent implements OnInit {
     },
     nav: true
   }
-  
+  addToCart(product:any){
+    this.cart.addSelectItemToCart(product);
+   } 
 }
 
 

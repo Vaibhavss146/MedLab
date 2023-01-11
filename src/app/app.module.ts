@@ -8,14 +8,18 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MedicineHomeComponent } from './components/medicine-home/medicine-home.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TopDealsComponent } from './components/top-deals/top-deals.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ViewProductDetailsComponent } from './components/view-product-details/view-product-details.component';
 import { ViewProductDetailsCategoryComponent } from './components/view-product-details-category/view-product-details-category.component';
- 
+import { LoginModule } from './login/login.module';
+import { CartModule } from './cart/cart/cart.module';
+import { ConfirmOrderComponent } from './cart/confirm-order/confirm-order.component';
+
+// import { ViewProductDetailsComponent } from './vie./components/view-product-details-category/view-product-details-category.component
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,12 +29,11 @@ import { ViewProductDetailsCategoryComponent } from './components/view-product-d
     PageNotFoundComponent,
     MedicineHomeComponent,
     TopDealsComponent,
-    ViewProductDetailsComponent, 
-    ViewProductDetailsCategoryComponent 
-    
- 
+    ViewProductDetailsComponent,
+    ViewProductDetailsCategoryComponent,
+    ConfirmOrderComponent
+        // ViewProductDetailsComponent
   ],
-
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,7 +41,8 @@ import { ViewProductDetailsCategoryComponent } from './components/view-product-d
     CarouselModule,
     FormsModule,
     HttpClientModule,
-       
+    LoginModule,
+    CartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

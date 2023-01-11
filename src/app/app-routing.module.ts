@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookingDetailsComponent } from './cart/booking-details/booking-details.component';
+import * as cartComponent from './cart/cart/cart.component';
+import { ConfirmOrderComponent } from './cart/confirm-order/confirm-order.component';
 import { HomeComponent } from './components/home/home.component';
 import { MedicineHomeComponent } from './components/medicine-home/medicine-home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -7,12 +10,16 @@ import { ViewProductDetailsCategoryComponent } from './components/view-product-d
 import { ViewProductDetailsComponent } from './components/view-product-details/view-product-details.component';
 
 const routes: Routes = [
-  {path:'Home',component:HomeComponent},
-  {path:'Medicines',component:MedicineHomeComponent},
-  {path:'view-top-details-by-category',component:ViewProductDetailsCategoryComponent},
+  {path:'home',component:HomeComponent},
+  {path:'medicines',component:MedicineHomeComponent},
   {path:'view-product-details/:drug-code',component:ViewProductDetailsComponent},
-  {path:'',redirectTo:'/Home',pathMatch:'full'},
+  {path:'view-top-details-by-category',component:ViewProductDetailsCategoryComponent},
+  {path:'cart',component:cartComponent.CartComponent},
+  {path:'booking-details',component:BookingDetailsComponent},
+  {path:'confirm-order',component:ConfirmOrderComponent},
+  {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'**',component:PageNotFoundComponent}
+
 ];
 
 @NgModule({
